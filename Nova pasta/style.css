@@ -1,0 +1,147 @@
+
+
+/* Vars */
+:root{
+  --bg:#0b1220;
+  --panel:#0f1724;
+  --muted:#9aa6b2;
+  --text:#e6eef7;
+  --accent:#1565d8; /* cor principal - ajuste para combinar com o site do vídeo */
+  --accent-2:#60a5fa;
+  --radius:12px;
+  --container:1100px;
+  --glass: rgba(255,255,255,0.03);
+  --shadow: 0 8px 26px rgba(2,6,23,.6);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Reset simples */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,var(--bg), #071019 120%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+}
+
+/* Container */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:20px;
+}
+
+/* Header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:linear-gradient(180deg, rgba(12,18,28,0.9), rgba(6,10,16,0.7));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px) saturate(120%);
+}
+.header-inner{display:flex;gap:20px;align-items:center;justify-content:space-between}
+
+/* Brand */
+.brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--text)}
+.logo{
+  width:54px;height:54px;border-radius:10px;
+  display:grid;place-items:center;font-weight:800;
+  background: linear-gradient(135deg,var(--accent), var(--accent-2));
+  color:white;font-size:18px;
+}
+.brand-sub{display:block;color:var(--muted);font-size:12px}
+
+/* Nav */
+.main-nav{display:flex;align-items:center;gap:12px}
+.nav-toggle{display:none;background:transparent;border:0;padding:8px;cursor:pointer}
+.hamburger{width:22px;height:2px;background:var(--text);display:block;position:relative}
+.hamburger::after,.hamburger::before{content:"";position:absolute;width:22px;height:2px;background:var(--text);left:0}
+.hamburger::before{top:-7px} .hamburger::after{top:7px}
+.nav-menu{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.nav-menu a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+.nav-menu a:hover{color:var(--text);background:var(--glass)}
+
+/* Header actions */
+.header-actions{display:flex;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);cursor:pointer;text-decoration:none}
+.btn:hover{transform:translateY(-2px);transition:transform .18s}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:0;box-shadow: 0 8px 24px rgba(21,101,216,0.18)}
+.btn-outline{border:1px solid rgba(255,255,255,0.06)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.03)}
+
+/* Hero */
+.hero{padding:64px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 460px;gap:30px;align-items:center}
+.hero-content h1{font-size:clamp(26px,3.6vw,40px);margin:0 0 12px}
+.hero-content p{color:var(--muted);margin:0 0 18px}
+.hero-cta{display:flex;gap:12px;margin:18px 0}
+.trust-list{display:flex;gap:14px;margin:18px 0 0;list-style:none;padding:0;color:var(--muted)}
+
+/* Carousel */
+.carousel{background:var(--panel);border-radius:12px;padding:12px;box-shadow:var(--shadow)}
+.carousel-track{display:flex;gap:8px;overflow:hidden;position:relative}
+.carousel-item{min-width:100%;flex:0 0 100%;transition:transform .5s ease}
+.carousel-item img{width:100%;height:260px;object-fit:cover;border-radius:8px}
+
+/* Carousel controls */
+.carousel-controls{display:flex;justify-content:center;gap:8px;margin-top:10px}
+.carousel-controls button{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:8px;color:var(--text);cursor:pointer}
+
+/* Sections */
+.section{padding:56px 0}
+.section.alt-bg{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.section h2{margin:0 0 8px}
+.muted{color:var(--muted)}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:20px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+
+/* Project grid */
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:20px}
+.project-card{background:var(--panel);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+.project-card img{width:100%;height:160px;object-fit:cover;display:block}
+.project-info{padding:12px}
+
+/* About grid */
+.about-grid{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:center}
+.bullets{list-style:none;padding:0;margin:14px 0 0;color:var(--muted)}
+
+/* Stats */
+.stat{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);margin-bottom:12px}
+.stat-num{font-size:22px;font-weight:700;color:var(--accent)}
+.stat-label{color:var(--muted);font-size:13px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 340px;gap:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-grid input,.form-grid textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.form-grid textarea{grid-column:1/-1;min-height:140px;resize:vertical}
+.form-actions{grid-column:1/-1;display:flex;gap:12px;align-items:center}
+.form-message{margin-top:8px;color:var(--muted)}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:18px 0;margin-top:24px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:center}
+
+/* Responsiveness */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .nav-menu{position:fixed;right:16px;top:68px;background:var(--panel);padding:12px;border-radius:8px;flex-direction:column;display:none}
+  .nav-toggle{display:block}
+  .nav-menu.show{display:flex}
+  .carousel-item img{height:200px}
+}
+
+/* Small desktop tweaks */
+@media (min-width:1200px){
+  .hero-media .carousel-item img{height:320px}
+}
